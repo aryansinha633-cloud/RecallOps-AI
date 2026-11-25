@@ -8,18 +8,7 @@ from backend.app.services.llm_service import LLMService
 from backend.app.config import Settings
 
 
-class FakeMemory:
-    def __init__(self, memories=None):
-        self.memories = memories or []
-
-    def recall(self, *args, **kwargs):
-        return {"status": "success", "memories": self.memories}
-
-
-class MemoryMustNotBeCalled:
-    def recall(self, *args, **kwargs):
-        raise AssertionError("memory recall must not run when memory_enabled is false")
-
+chinarrrrrrr
 
 class FakeRetainingMemory:
     def retain_incident(self, db, incident):
